@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shaheryar - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Shaheryar Amir</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero reveal">
+    <div class="container">
+      <div class="hero-content">
+        <img src="IMG-20211212-WA0056-removebg-preview.png" alt="Your Photo" class="profile-img" />
+        <div>
+          <h2>Hi, I'm Shaheryar Amir</h2>
+          <p>Web Developer | Backend Engineer | Tech Enthusiast | MachineLearning</p>
+          <a href="CV.png" download class="download-btn">Download CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section reveal">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I’m a Computer Science student at FAST University, Lahore Campus. I am passionate about solving problems through code, with strong interests in <strong>Web Development</strong> and <strong>Artificial Intelligence</strong>. I enjoy learning new technologies, building efficient solutions, and continuously improving my skills in the tech world.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills" class="section reveal">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Git & GitHub</li>
+        <li>Responsive Design</li>
+        <li>React (basic)</li>
+        <li>MongoDB</li>
+      </ul>
+    </div>
+  </section>
+
+<section id="projects" class="section reveal">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <img src="imagesSp.jpeg" alt="Space Shooter Game" />
+        <h3>Space Shooter Game</h3>
+        <p>A 2D shooting game built using C++ and SFML, featuring enemy movement, bullets, collisions, and scoring.</p>
+      </div>
+
+      <div class="project-card">
+        <img src="imagesSm.png" alt="Social Media App" />
+        <h3>Social Media App</h3>
+        <p>A console-based C++ application that allows users to post, follow, comment, and interact with each other.</p>
+      </div>
+
+      <div class="project-card">
+        <img src="downloadTm.jpeg" alt="Task Management System" />
+        <h3>Task Management System</h3>
+        <p>A basic web-based CRUD application to manage tasks, built using HTML, CSS, JavaScript, and connected with a database (MongoDB or SQL).</p>
+      </div>
+
+      <div class="project-card">
+        <img src="Spfac.jpg" alt="Student ML Project" />
+        <h3>Student Factor Prediction</h3>
+        <p>Machine learning project that analyzes student performance factors and predicts final scores using regression models (Scikit-learn, pandas).</p>
+      </div>
+
+      <div class="project-card">
+        <img src="Port.jpeg" alt="Portfolio Website" />
+        <h3>Personal Portfolio</h3>
+        <p>This responsive website showcases my projects, skills, and resume. Built with HTML, CSS, and basic JavaScript for scroll animations.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <section id="contact" class="section reveal">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Shaheryar Amir. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll reveal effect
+    const reveals = document.querySelectorAll(".reveal");
+
+    function revealOnScroll() {
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 100;
+
+        if (elementTop < windowHeight - revealPoint) {
+          reveals[i].classList.add("active");
+        } else {
+          reveals[i].classList.remove("active");
+        }
+      }
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+
+    // Contact form fake submit
+    document.querySelector("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Message sent successfully! (Fake form)");
+    });
+  </script>
+</body>
+</html>
